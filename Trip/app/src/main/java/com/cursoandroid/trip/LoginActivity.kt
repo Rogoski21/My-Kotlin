@@ -1,9 +1,9 @@
 package com.cursoandroid.trip
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 
 class LoginActivity : AppCompatActivity() {
@@ -13,12 +13,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+    }
 
-        val button = findViewById<Button>(R.id.button)
+    fun nextPage(view: View) {
+        val button = findViewById<Button>(R.id.entrar)
+        button.setOnClickListener {
 
-        button.setOnClickListener{
-
-            val intent =  Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

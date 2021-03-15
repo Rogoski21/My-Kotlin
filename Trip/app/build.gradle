@@ -43,5 +43,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //CarouselView
-    implementation 'com.synnapps:carouselview:0.1.5'
+
+    // Material Components for Android
+    implementation 'com.google.android.material:material:1.1.0'
+
+    // Optional: Circle Indicator (To fix the xml preview "Missing classes" error)
+    implementation 'me.relex:circleindicator:2.1.4'
+
+    implementation 'com.github.ImaginativeShohag:Why-Not-Image-Carousel:v1.0.0'
 }
