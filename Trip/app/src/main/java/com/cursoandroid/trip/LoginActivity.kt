@@ -13,15 +13,24 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-    }
+        val button = findViewById<Button>(R.id.entrar)
+        button.setOnClickListener {
 
+            val intent = Intent(this, Carrinho::class.java)
+            startActivity(intent)
+        }
+
+    }
+/*
     fun nextPage(view: View) {
         val button = findViewById<Button>(R.id.entrar)
         button.setOnClickListener {
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Shopping::class.java)
             startActivity(intent)
         }
     }
+
+ */
 }
 

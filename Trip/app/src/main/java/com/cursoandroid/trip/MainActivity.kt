@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             button.setOnClickListener {
 
-                val intent = Intent(this, Carrinho::class.java)
+                val intent = Intent(this, Shopping::class.java)
                 startActivity(intent)
             }
         }

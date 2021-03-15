@@ -66,20 +66,22 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Recuperar senha"
-        app:layout_constraintTop_toBottomOf="@+id/entrar"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrar" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Registrar-se"
-        app:layout_constraintTop_toBottomOf="@+id/entrar"
-        tools:layout_editor_absoluteX="251dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
