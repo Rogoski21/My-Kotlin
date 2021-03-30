@@ -7,14 +7,163 @@
     android:orientation="vertical"
     tools:context=".Shopping">
 
-    <GridView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/my_grid_view_list"
-        android:columnWidth="150dp"
-        android:horizontalSpacing="15dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="15dp"
-        />
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+                <!--
+                                <ImageView
+                                    android:id="@+id/icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="95dp"
+                                    android:layout_marginLeft="0dp"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/singapore"
+                                    android:contentDescription="TODO" />
+                -->
+                <TextView
+                    android:id="@+id/nome_pacote1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Pacote Singapura"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:id="@+id/space1"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/nome_pacote1" />
+
+                <TextView
+                    android:id="@+id/real1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space1"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="R$: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/PrecoViagem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@+id/real1"
+                    android:text="12340,00" />
+
+                <Space
+                    android:id="@+id/space2"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/real1" />
+
+                <Button
+                    android:id="@+id/comprar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space2"
+                    android:layout_marginLeft="35dp"
+                    android:backgroundTint="#03A9F4"
+                    android:text="Comprar" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="5dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/nome_pacote2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Pacote Tehran"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:id="@+id/space3"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/nome_pacote2" />
+
+                <TextView
+                    android:id="@+id/real2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space3"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="R$: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/PrecoViagem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space3"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toEndOf="@+id/real2"
+                    android:text="20000,00" />
+
+                <Space
+                    android:id="@+id/space4"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/real2" />
+
+                <Button
+                    android:id="@+id/comprar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space4"
+                    android:layout_marginLeft="35dp"
+                    android:backgroundTint="#03A9F4"
+                    android:text="Comprar" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonPrint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+
+    </LinearLayout>
 
 </LinearLayout>
