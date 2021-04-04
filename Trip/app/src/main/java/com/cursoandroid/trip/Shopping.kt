@@ -54,7 +54,7 @@ class Shopping : AppCompatActivity()/*, AdapterView.OnItemClickListener*/ {
 
         btnPPrint.setOnClickListener {
 
-            PosDigital.getInstance().getPrinter().addImageBitmap(AlignMode.CENTER, ViewUtils.convertToBitmap(logo))
+           // PosDigital.getInstance().getPrinter().addImageBitmap(AlignMode.CENTER, ViewUtils.convertToBitmap(logo))
             PosDigital.getInstance().getPrinter().print(getPrinterCallback())
         }
     }
