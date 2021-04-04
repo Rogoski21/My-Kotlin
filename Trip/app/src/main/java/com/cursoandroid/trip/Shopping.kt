@@ -1,20 +1,24 @@
 package com.cursoandroid.trip
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.os.RemoteException
-import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.ViewUtils
+import androidx.core.content.res.ResourcesCompat
 import com.getnet.posdigital.PosDigital
+import com.getnet.posdigital.extension.ViewUtils.convertToBitmap
 import com.getnet.posdigital.printer.AlignMode
 import com.getnet.posdigital.printer.FontFormat
 import com.getnet.posdigital.printer.IPrinterCallback
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class Shopping : AppCompatActivity()/*, AdapterView.OnItemClickListener*/ {
@@ -39,17 +43,22 @@ class Shopping : AppCompatActivity()/*, AdapterView.OnItemClickListener*/ {
 
     }
 
+
     fun testPrint() {
+
         val btnPPrint = findViewById<Button>(R.id.buttonPrint)
-        
+        val view = layoutInflater.inflate(R.layout.comprovante, null)
+
+        val bitmap = BitmapFactory.decodeResource(resources, R.layout.comprovante) // tentativa de bitmap
+        val logo = getResources().getDrawable(R.drawable.logo_getnet)
+
         btnPPrint.setOnClickListener {
-            PosDigital.getInstance().getPrinter().init()
-            PosDigital.getInstance().getPrinter().setGray(5)
-            PosDigital.getInstance().getPrinter().defineFontFormat(FontFormat.MEDIUM)
-            PosDigital.getInstance().getPrinter().addText(AlignMode.CENTER,"Pedro Impressões")
+
+            PosDigital.getInstance().getPrinter().addImageBitmap(AlignMode.CENTER, ViewUtils.convertToBitmap(logo))
             PosDigital.getInstance().getPrinter().print(getPrinterCallback())
         }
     }
+
     private fun getPrinterCallback(): IPrinterCallback.Stub {
         return object : IPrinterCallback.Stub() {
 
@@ -62,9 +71,17 @@ class Shopping : AppCompatActivity()/*, AdapterView.OnItemClickListener*/ {
             @Throws(RemoteException::class)
             override fun onError(cause: Int) {
                 freePrintButton = true
-               // openErrorDialog(parseStatus(cause))
+                // openErrorDialog(parseStatus(cause))
             }
         }
+    }
+
+    fun openInfoDialog(message: String) {
+        //openBottomSheetDialog("Info", message)
+    }
+
+    fun openErrorDialog(message: String) {
+        //openBottomSheetDialog("Error", message)
     }
 
     fun compra1() {
@@ -101,15 +118,6 @@ class Shopping : AppCompatActivity()/*, AdapterView.OnItemClickListener*/ {
             var currencyPosition = data?.getStringExtra(ARG_CURRENCUPOSITION)
             var callerId = data?.getStringExtra(ARG_CALLERID)
         }
-    }
-
-
-    fun openInfoDialog(message: String) {
-        //openBottomSheetDialog("Info", message)
-    }
-
-    fun openErrorDialog(message: String) {
-        //openBottomSheetDialog("Error", message)
     }
 
 /*

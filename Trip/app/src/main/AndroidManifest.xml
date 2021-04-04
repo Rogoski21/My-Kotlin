@@ -3,6 +3,7 @@
     package="com.cursoandroid.trip">
 
     <uses-permission android:name="com.getnet.posdigital.service.POSDIGITAL" />
+    <meta-data android:name="allow_print_permission" android:value="1" />
 
     <application
 
